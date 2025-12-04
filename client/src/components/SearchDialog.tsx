@@ -7,7 +7,7 @@ import {
 } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Search, ArrowRight, Droplet, Cpu, Building, Compass } from "lucide-react";
+import { Search, ArrowRight, Droplet, Cpu, Building2, Factory, Home, Wrench, Beaker } from "lucide-react";
 import { Link } from "wouter";
 
 interface SearchDialogProps {
@@ -15,23 +15,28 @@ interface SearchDialogProps {
   onOpenChange: (open: boolean) => void;
 }
 
-// todo: remove mock functionality - this would be actual search data
 const searchData = [
-  { title: "Water Treatment Plants", category: "Services", href: "/services/wtp", icon: Droplet },
-  { title: "Effluent Treatment Plants", category: "Services", href: "/services/etp", icon: Droplet },
-  { title: "Sewage Treatment Plants", category: "Services", href: "/services/stp", icon: Droplet },
-  { title: "RO Plants", category: "Services", href: "/services/ro", icon: Droplet },
-  { title: "AI Software Development", category: "Swift Altus", href: "/services/ai", icon: Cpu },
-  { title: "Web Development", category: "Swift Altus", href: "/services/software", icon: Cpu },
-  { title: "Swift Tech Engineers", category: "Division", href: "/engineers", icon: Droplet },
-  { title: "Swift Altus", category: "Division", href: "/altus", icon: Cpu },
-  { title: "Engineering & Consulting", category: "Division", href: "/consulting", icon: Compass },
-  { title: "Building Construction", category: "Division", href: "/construction", icon: Building },
-  { title: "Automobile Industry", category: "Industry", href: "/industries/automobile", icon: Building },
-  { title: "Power Sector", category: "Industry", href: "/industries/power", icon: Building },
-  { title: "Pharmaceutical Industry", category: "Industry", href: "/industries/pharmaceutical", icon: Building },
-  { title: "About Us", category: "Company", href: "/about", icon: Building },
-  { title: "Contact", category: "Company", href: "/contact", icon: Building },
+  { title: "Water Treatment Plants (WTP)", category: "Services", href: "/engineers#wtp", icon: Droplet },
+  { title: "Effluent Treatment Plants (ETP)", category: "Services", href: "/engineers#etp", icon: Droplet },
+  { title: "Sewage Treatment Plants (STP)", category: "Services", href: "/engineers#stp", icon: Droplet },
+  { title: "RO & DM Plants", category: "Services", href: "/engineers#ro", icon: Droplet },
+  { title: "Oxygen Dosing Systems", category: "Services", href: "/engineers#oxygen", icon: Beaker },
+  { title: "Operation & Maintenance", category: "Services", href: "/engineers#om", icon: Wrench },
+  { title: "Swift Tech Engineers", category: "Company", href: "/engineers", icon: Droplet },
+  { title: "Swift Tech Builders & Constructions", category: "Company", href: "/builders", icon: Building2 },
+  { title: "Swift Altus", category: "Company", href: "/altus", icon: Cpu },
+  { title: "Residential Buildings", category: "Construction", href: "/builders", icon: Home },
+  { title: "Industrial Buildings", category: "Construction", href: "/builders", icon: Factory },
+  { title: "House Lifting Services", category: "Construction", href: "/builders", icon: Building2 },
+  { title: "AI Software Development", category: "Swift Altus", href: "/altus", icon: Cpu },
+  { title: "Custom Software", category: "Swift Altus", href: "/altus", icon: Cpu },
+  { title: "Automobile Industry", category: "Industry", href: "/industries", icon: Factory },
+  { title: "Power Sector", category: "Industry", href: "/industries", icon: Factory },
+  { title: "Pharmaceutical Industry", category: "Industry", href: "/industries", icon: Factory },
+  { title: "Food & Beverages", category: "Industry", href: "/industries", icon: Factory },
+  { title: "Textile Industry", category: "Industry", href: "/industries", icon: Factory },
+  { title: "About Us", category: "Pages", href: "/about", icon: Building2 },
+  { title: "Contact", category: "Pages", href: "/contact", icon: Building2 },
 ];
 
 export default function SearchDialog({ open, onOpenChange }: SearchDialogProps) {
@@ -69,7 +74,7 @@ export default function SearchDialog({ open, onOpenChange }: SearchDialogProps) 
           <div className="flex items-center gap-3">
             <Search className="h-5 w-5 text-muted-foreground" />
             <Input
-              placeholder="Search services, divisions, industries..."
+              placeholder="Search services, companies, industries..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               className="border-0 focus-visible:ring-0 px-0 text-base"

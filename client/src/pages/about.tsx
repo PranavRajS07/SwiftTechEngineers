@@ -9,18 +9,18 @@ import { Separator } from "@/components/ui/separator";
 import { CheckCircle, Award, Globe, Users, Target, Eye } from "lucide-react";
 
 const timeline = [
-  { year: "2006", title: "Founded", description: "Swift Tech Engineers established as a water treatment company" },
+  { year: "2006", title: "Founded", description: "Swift Tech Engineers (India) Pvt. Ltd. established as a water treatment company" },
   { year: "2010", title: "ISO Certified", description: "Achieved ISO 9001:2015 certification for quality management" },
-  { year: "2015", title: "Global Expansion", description: "Extended operations to Middle East and South Asia" },
-  { year: "2020", title: "2000+ Projects", description: "Milestone of completing 2000 successful projects" },
+  { year: "2015", title: "Global Expansion", description: "Extended operations to Sri Lanka, Bangladesh, Maldives, Saudi Arabia, Dubai & Kuwait" },
+  { year: "2020", title: "Swift Tech Builders", description: "Launched construction division for residential & industrial buildings" },
   { year: "2024", title: "Swift Altus Launch", description: "Launched AI software division for digital transformation" },
 ];
 
 const values = [
-  { icon: CheckCircle, title: "Quality First", description: "Uncompromising commitment to delivering excellence" },
-  { icon: Award, title: "Innovation", description: "Constantly pushing boundaries with new technologies" },
-  { icon: Globe, title: "Global Standards", description: "Meeting international quality and safety norms" },
-  { icon: Users, title: "Customer Focus", description: "Building lasting relationships with our clients" },
+  { icon: CheckCircle, title: "Quality First", description: "Uncompromising commitment to delivering excellence in every project" },
+  { icon: Award, title: "Innovation", description: "State-of-the-art treatment technologies and solutions" },
+  { icon: Globe, title: "Global Standards", description: "Meeting ASME, ANSI, IS2865 and international specifications" },
+  { icon: Users, title: "Customer Focus", description: "Building lasting relationships with satisfied customers worldwide" },
 ];
 
 export default function About() {
@@ -39,12 +39,13 @@ export default function About() {
             <div className="text-center max-w-3xl mx-auto">
               <Badge variant="outline" className="mb-4">About Us</Badge>
               <h1 className="text-4xl sm:text-5xl font-bold mb-6">
-                Engineering Excellence Since 2006
+                The Water Specialist Since 2006
               </h1>
               <p className="text-muted-foreground text-lg leading-relaxed">
                 Swift Tech Engineers (India) Pvt. Ltd. is a pioneer in industrial water and 
                 wastewater treatment solutions with an established reputation for innovative 
-                design and manufacturing excellence.
+                design and manufacturing excellence. We serve all over India as well as abroad 
+                countries like Sri Lanka, Bangladesh, Maldives, Saudi Arabia, Dubai & Kuwait.
               </p>
             </div>
           </div>
@@ -62,7 +63,7 @@ export default function About() {
                   Our core mission is to provide high-quality, cost-effective water treatment 
                   solutions. Continual product development is our mandate; we are constantly 
                   striving to improve our products to suit our customers' individual needs 
-                  while ensuring improvement to the environments and ecosystems.
+                  while ensuring improvement to the environments and ecosystems in which they are applied.
                 </p>
               </Card>
               
@@ -75,7 +76,7 @@ export default function About() {
                   To be a leading water management company across the world. We aim to 
                   produce the highest quality products and systems to tackle our customers' 
                   water and wastewater treatment requirements at the most competitive prices 
-                  with commendable service.
+                  with commendable service. "Design & Services at its Best"
                 </p>
               </Card>
             </div>
@@ -90,22 +91,22 @@ export default function About() {
             </div>
             
             <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-border" />
+              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-border hidden md:block" />
               <div className="space-y-12">
                 {timeline.map((item, index) => (
                   <div 
                     key={index} 
-                    className={`flex items-center gap-8 ${index % 2 === 0 ? "flex-row" : "flex-row-reverse"}`}
+                    className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
                   >
-                    <div className={`flex-1 ${index % 2 === 0 ? "text-right" : "text-left"}`}>
+                    <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"} text-center md:text-inherit`}>
                       <Card className="inline-block p-6">
                         <Badge variant="secondary" className="mb-2">{item.year}</Badge>
                         <h3 className="font-bold text-lg mb-2">{item.title}</h3>
                         <p className="text-muted-foreground text-sm">{item.description}</p>
                       </Card>
                     </div>
-                    <div className="w-4 h-4 rounded-full bg-primary z-10" />
-                    <div className="flex-1" />
+                    <div className="w-4 h-4 rounded-full bg-primary z-10 hidden md:block" />
+                    <div className="flex-1 hidden md:block" />
                   </div>
                 ))}
               </div>
@@ -145,7 +146,7 @@ export default function About() {
               <p className="text-muted-foreground max-w-2xl mx-auto">
                 We are certified to ISO 9001:2015 quality management system for designing, 
                 engineering, manufacturing, supply, erection, commissioning, troubleshooting, 
-                operation & maintenance services.
+                operation & maintenance services of water and wastewater treatment plants.
               </p>
             </div>
             
@@ -163,15 +164,19 @@ export default function About() {
               <div className="space-y-3">
                 <p className="text-sm text-muted-foreground flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  Commitment to meet or exceed customer requirements
+                  Commitment to meet or exceed customer requirements for quality, delivery, performance, and value
                 </p>
                 <p className="text-sm text-muted-foreground flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  Continuous improvement of quality management system
+                  Continuous improvement across the organization through world-class business principles
                 </p>
                 <p className="text-sm text-muted-foreground flex items-start gap-2">
                   <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
-                  World-class business principles application
+                  Equipment and accessories confirm to ASME, ANSI, IS2865 and international standards
+                </p>
+                <p className="text-sm text-muted-foreground flex items-start gap-2">
+                  <CheckCircle className="h-4 w-4 text-green-500 mt-0.5 flex-shrink-0" />
+                  Treated water qualities confirm to WHO standards and local Pollution Control Board norms
                 </p>
               </div>
             </Card>

@@ -1,11 +1,28 @@
-# Swift Tech Group - Corporate Website
+# Swift Tech Engineers (India) Pvt. Ltd. - Corporate Website
 
 ## Project Overview
-A comprehensive, modern corporate website for Swift Tech Group showcasing their four business divisions:
+A comprehensive, modern corporate website for Swift Tech Engineers (India) Pvt. Ltd. - "The Water Specialist" - showcasing their three business divisions:
 1. **Swift Tech Engineers** - Water & Wastewater Treatment Solutions (Since 2006)
-2. **Swift Altus** - AI-Powered Software & Products (New startup division)
-3. **Engineering & Consulting** - Professional Engineering Services
-4. **Building Construction** - Modern Construction Solutions
+2. **Swift Tech Builders & Constructions** - Residential, Industrial Construction & House Lifting
+3. **Swift Altus** - AI-Powered Software & Products (New startup division)
+
+## Company Information
+- **Full Name**: Swift Tech Engineers (India) Private Limited
+- **Tagline**: The Water Specialist
+- **Established**: 2006
+- **Certification**: ISO 9001:2015
+- **Global Presence**: India, Sri Lanka, Bangladesh, Maldives, Saudi Arabia, Dubai, Kuwait
+
+## Core Services (Water Treatment)
+- WTP - Water Treatment Plants
+- ETP - Effluent Treatment Plants
+- STP - Sewage Treatment Plants
+- RO Plants & DM Plants
+- Clarifiers, Flocculators, Filtration Systems
+- Oxygen Dosing Systems
+- Chemical Dosing Systems
+- Operation & Maintenance Services
+- Troubleshooting & Water Audit
 
 ## Tech Stack
 - **Frontend**: React + TypeScript + Vite
@@ -40,6 +57,7 @@ shared/
 - `/about` - About the company, mission, vision, certifications
 - `/contact` - Contact form with multi-division inquiry
 - `/engineers` - Swift Tech Engineers division page
+- `/builders` - Swift Tech Builders & Constructions page
 - `/altus` - Swift Altus AI software division page
 - `/industries` - Industries served with detailed info
 
@@ -50,7 +68,6 @@ shared/
 - Responsive mobile-first design
 - Animated statistics counters
 - Client logo marquee
-- Testimonial carousel
 - SEO optimized with meta tags
 
 ## Design System
@@ -61,15 +78,18 @@ shared/
 - Shadows: Minimal, used sparingly
 
 ## Recent Changes
-- December 2024: Initial website design created with all major sections
-- Generated hero images for all divisions
-- Implemented search dialog with real-time filtering
-- Added dark mode support
-- Created all major pages (Home, About, Contact, Engineers, Altus, Industries)
+- December 2024: Corrected company name to "Swift Tech Engineers (India) Pvt. Ltd."
+- Updated tagline to "The Water Specialist"
+- Fixed division structure (3 companies: Engineers, Builders, Altus)
+- Removed newsletter signup
+- Updated statistics with realistic numbers
+- Added accurate services from actual website
+- Created Swift Tech Builders & Constructions page with house lifting services
 
 ## User Preferences
 - Minimal yet impressive design
 - kula.ai style inspiration
-- SEO-optimized
-- Search functionality for services
-- Three company divisions + Swift Altus (new AI software startup)
+- SEO-optimized for water treatment services
+- No newsletter signup
+- Realistic statistics
+- Three company divisions only (no separate consulting)

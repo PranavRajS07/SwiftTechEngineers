@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Droplets, Building2, Cpu, Compass } from "lucide-react";
+import { ArrowRight, Droplets, Building2, Cpu } from "lucide-react";
 
 import waterImage from "@assets/generated_images/water_treatment_facility.png";
 import aiImage from "@assets/generated_images/ai_software_development_workspace.png";
@@ -12,12 +12,22 @@ const divisions = [
     id: "engineers",
     title: "Swift Tech Engineers",
     subtitle: "Water & Wastewater Treatment",
-    description: "Pioneer in industrial water treatment solutions with expertise in WTP, ETP, STP, RO plants, and advanced treatment technologies.",
+    description: "Pioneer in industrial water treatment solutions with expertise in WTP, ETP, STP, RO plants, DM plants, and advanced treatment technologies. ISO 9001:2015 certified.",
     icon: Droplets,
     image: waterImage,
     href: "/engineers",
     badge: "Since 2006",
     features: ["WTP & ETP", "STP & RO Plants", "O&M Services"],
+  },
+  {
+    id: "builders",
+    title: "Swift Tech Builders & Constructions",
+    subtitle: "Building & Infrastructure",
+    description: "Specialized in residential and industrial building construction, along with innovative house lifting and relocating services for low-lying areas.",
+    icon: Building2,
+    image: constructionImage,
+    href: "/builders",
+    features: ["Residential Buildings", "Industrial Structures", "House Lifting"],
   },
   {
     id: "altus",
@@ -30,26 +40,6 @@ const divisions = [
     badge: "New",
     features: ["AI Products", "Custom Software", "Web Development"],
   },
-  {
-    id: "consulting",
-    title: "Engineering & Consulting",
-    subtitle: "Professional Services",
-    description: "Expert engineering consultancy services for industrial projects. Design, planning, and technical advisory solutions.",
-    icon: Compass,
-    image: constructionImage,
-    href: "/consulting",
-    features: ["Design", "Planning", "Advisory"],
-  },
-  {
-    id: "construction",
-    title: "Building Construction",
-    subtitle: "Modern Infrastructure",
-    description: "State-of-the-art building construction services. Delivering quality infrastructure projects on time and within budget.",
-    icon: Building2,
-    image: constructionImage,
-    href: "/construction",
-    features: ["Commercial", "Industrial", "Residential"],
-  },
 ];
 
 export default function Divisions() {
@@ -57,17 +47,17 @@ export default function Divisions() {
     <section className="py-24 bg-background" data-testid="section-divisions">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge variant="outline" className="mb-4">Our Business Units</Badge>
+          <Badge variant="outline" className="mb-4">Our Companies</Badge>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Four Divisions, One Vision
+            Three Companies, One Vision
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Comprehensive solutions across water treatment, software, engineering, and construction - 
-            all under one trusted brand.
+            Comprehensive solutions across water treatment, construction, and software - 
+            all under the trusted Swift Tech brand.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8">
           {divisions.map((division, index) => {
             const Icon = division.icon;
             return (
@@ -102,7 +92,7 @@ export default function Divisions() {
                     </div>
                   </div>
                   <div className="p-6">
-                    <p className="text-muted-foreground mb-4 line-clamp-2">
+                    <p className="text-muted-foreground mb-4 line-clamp-3">
                       {division.description}
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">

@@ -1,6 +1,5 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { 
   Linkedin, 
@@ -8,31 +7,27 @@ import {
   Facebook, 
   Mail, 
   Phone, 
-  MapPin,
-  ArrowRight
+  MapPin
 } from "lucide-react";
 
 const quickLinks = [
   { title: "About Us", href: "/about" },
-  { title: "Services", href: "/services" },
   { title: "Industries", href: "/industries" },
-  { title: "Projects", href: "/projects" },
-  { title: "Careers", href: "/careers" },
   { title: "Contact", href: "/contact" },
 ];
 
 const divisions = [
   { title: "Swift Tech Engineers", href: "/engineers" },
+  { title: "Swift Tech Builders & Constructions", href: "/builders" },
   { title: "Swift Altus", href: "/altus" },
-  { title: "Engineering & Consulting", href: "/consulting" },
-  { title: "Building Construction", href: "/construction" },
 ];
 
 const services = [
-  { title: "Water Treatment Plants", href: "/services/wtp" },
-  { title: "Effluent Treatment", href: "/services/etp" },
-  { title: "AI Software Development", href: "/services/ai" },
-  { title: "Custom Software", href: "/services/software" },
+  { title: "Water Treatment Plants (WTP)", href: "/engineers#wtp" },
+  { title: "Effluent Treatment Plants (ETP)", href: "/engineers#etp" },
+  { title: "Sewage Treatment Plants (STP)", href: "/engineers#stp" },
+  { title: "RO Plants", href: "/engineers#ro" },
+  { title: "Operation & Maintenance", href: "/engineers#om" },
 ];
 
 export default function Footer() {
@@ -46,13 +41,13 @@ export default function Footer() {
                 <span className="text-primary-foreground font-bold text-lg">ST</span>
               </div>
               <div>
-                <span className="font-bold text-lg">Swift Tech</span>
-                <span className="text-muted-foreground text-sm block -mt-1">Group</span>
+                <span className="font-bold text-lg">Swift Tech Engineers</span>
+                <span className="text-muted-foreground text-xs block -mt-1">(India) Pvt. Ltd.</span>
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              A pioneer in industrial water treatment, building construction, and AI-powered 
-              software solutions. Serving globally since 2006.
+              Pioneer in industrial water and wastewater treatment solutions since 2006. 
+              Serving India and abroad with state-of-the-art treatment technologies.
             </p>
             <div className="flex gap-2">
               <Button variant="outline" size="icon" data-testid="button-linkedin">
@@ -68,25 +63,7 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold">Quick Links</h3>
-            <ul className="space-y-2">
-              {quickLinks.map((link) => (
-                <li key={link.title}>
-                  <Link href={link.href}>
-                    <span 
-                      className="text-muted-foreground hover:text-foreground transition-colors text-sm cursor-pointer"
-                      data-testid={`link-footer-${link.title.toLowerCase().replace(/\s+/g, "-")}`}
-                    >
-                      {link.title}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="space-y-4">
-            <h3 className="font-semibold">Our Divisions</h3>
+            <h3 className="font-semibold">Our Companies</h3>
             <ul className="space-y-2">
               {divisions.map((division) => (
                 <li key={division.title}>
@@ -104,29 +81,45 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h3 className="font-semibold">Newsletter</h3>
-            <p className="text-muted-foreground text-sm">
-              Subscribe to get the latest updates on our services and innovations.
-            </p>
-            <div className="flex gap-2">
-              <Input 
-                placeholder="Enter your email" 
-                type="email"
-                data-testid="input-newsletter-email"
-              />
-              <Button size="icon" data-testid="button-subscribe">
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </div>
-            <div className="space-y-2 pt-4">
+            <h3 className="font-semibold">Services</h3>
+            <ul className="space-y-2">
+              {services.map((service) => (
+                <li key={service.title}>
+                  <Link href={service.href}>
+                    <span 
+                      className="text-muted-foreground hover:text-foreground transition-colors text-sm cursor-pointer"
+                      data-testid={`link-footer-service-${service.title.toLowerCase().replace(/\s+/g, "-")}`}
+                    >
+                      {service.title}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="space-y-4">
+            <h3 className="font-semibold">Contact Info</h3>
+            <div className="space-y-3">
+              <div className="flex items-start gap-2 text-sm text-muted-foreground">
+                <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
+                <span>Serving India, Sri Lanka, Bangladesh, Maldives, Saudi Arabia, UAE & Kuwait</span>
+              </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4" />
                 <span>info@swifttech.in</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4" />
-                <span>+91 1234 567890</span>
+                <span>Contact us for inquiries</span>
               </div>
+            </div>
+            <div className="pt-2">
+              <Link href="/contact">
+                <Button variant="outline" size="sm" className="w-full" data-testid="button-footer-contact">
+                  Get in Touch
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -135,19 +128,10 @@ export default function Footer() {
 
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Swift Tech Group. All rights reserved.
+            © {new Date().getFullYear()} Swift Tech Engineers (India) Pvt. Ltd. All rights reserved.
           </p>
           <div className="flex gap-6 text-sm text-muted-foreground">
-            <Link href="/privacy">
-              <span className="hover:text-foreground transition-colors cursor-pointer">
-                Privacy Policy
-              </span>
-            </Link>
-            <Link href="/terms">
-              <span className="hover:text-foreground transition-colors cursor-pointer">
-                Terms of Service
-              </span>
-            </Link>
+            <span className="text-xs">ISO 9001:2015 Certified</span>
           </div>
         </div>
       </div>

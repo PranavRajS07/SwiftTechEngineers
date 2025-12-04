@@ -1,63 +1,63 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Droplet, Recycle, Filter, Waves, Binary, Globe, Wrench, Gauge } from "lucide-react";
+import { ArrowRight, Droplet, Recycle, Filter, Waves, Binary, Globe, Wrench, Gauge, Beaker, Wind } from "lucide-react";
 import { Link } from "wouter";
 
 const services = [
   {
     id: "wtp",
     title: "Water Treatment Plants",
-    description: "Complete WTP solutions including design, installation, and commissioning for industrial applications.",
+    description: "Complete WTP solutions including clarifiers, flash mixers, flocculators, and filtration systems (PSF, ACF, DMF, IRF).",
     icon: Droplet,
     category: "Water Treatment",
   },
   {
     id: "etp",
-    title: "Effluent Treatment",
-    description: "Advanced ETP systems for treating industrial wastewater to meet pollution control norms.",
+    title: "Effluent Treatment Plants",
+    description: "Advanced ETP systems for treating industrial wastewater to meet pollution control board norms.",
     icon: Recycle,
     category: "Water Treatment",
   },
   {
     id: "stp",
-    title: "Sewage Treatment",
-    description: "Modern STP solutions for residential, commercial, and municipal applications.",
+    title: "Sewage Treatment Plants",
+    description: "Modern STP solutions for residential, commercial, and municipal applications with advanced aeration systems.",
     icon: Filter,
     category: "Water Treatment",
   },
   {
     id: "ro",
-    title: "RO Plants",
-    description: "High-purity reverse osmosis systems for various industrial and commercial applications.",
+    title: "RO & DM Plants",
+    description: "High-purity reverse osmosis and demineralization systems for industrial and commercial applications.",
     icon: Waves,
     category: "Water Treatment",
   },
   {
-    id: "ai-software",
-    title: "AI Software Development",
-    description: "Custom AI-powered software solutions for automation, analytics, and intelligent systems.",
-    icon: Binary,
-    category: "Swift Altus",
+    id: "oxygen",
+    title: "Oxygen Dosing Systems",
+    description: "High pure oxygen dosing systems for super critical boiler applications and advanced treatment processes.",
+    icon: Wind,
+    category: "Specialty",
   },
   {
-    id: "web-development",
-    title: "Web & App Development",
-    description: "Modern websites and applications built with cutting-edge technologies for organizations.",
-    icon: Globe,
-    category: "Swift Altus",
+    id: "chemical",
+    title: "Chemical Dosing Systems",
+    description: "LP & HP chemical dosing systems, bulk acid & caustic handling systems for precise treatment control.",
+    icon: Beaker,
+    category: "Specialty",
   },
   {
     id: "maintenance",
     title: "Operation & Maintenance",
-    description: "Comprehensive O&M services for water treatment plants with 24/7 support.",
+    description: "Comprehensive O&M services for water treatment plants with professional technocrats and 24/7 support.",
     icon: Wrench,
     category: "Services",
   },
   {
     id: "troubleshooting",
-    title: "Troubleshooting",
-    description: "Expert troubleshooting and optimization services for existing treatment systems.",
+    title: "Troubleshooting & Audit",
+    description: "Expert troubleshooting, enhanced water audit, and optimization services for existing treatment systems.",
     icon: Gauge,
     category: "Services",
   },
@@ -70,11 +70,11 @@ export default function Services() {
         <div className="text-center mb-16">
           <Badge variant="outline" className="mb-4">What We Offer</Badge>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-            Comprehensive Solutions
+            State-of-the-Art Treatment Technologies
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            From water treatment to AI software, we provide end-to-end solutions 
-            tailored to your industry needs.
+            Designing, engineering, manufacturing, and commissioning water and wastewater 
+            treatment solutions that meet world-class standards.
           </p>
         </div>
 
@@ -104,9 +104,9 @@ export default function Services() {
         </div>
 
         <div className="text-center mt-12">
-          <Link href="/services">
+          <Link href="/engineers">
             <Button size="lg" variant="outline" className="group" data-testid="button-view-all-services">
-              View All Services
+              View All Solutions
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>

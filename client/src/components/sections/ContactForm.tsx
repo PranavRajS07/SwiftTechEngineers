@@ -16,9 +16,8 @@ import { Mail, Phone, MapPin, Send, Clock, CheckCircle } from "lucide-react";
 
 const divisions = [
   { value: "engineers", label: "Swift Tech Engineers - Water Treatment" },
+  { value: "builders", label: "Swift Tech Builders & Constructions" },
   { value: "altus", label: "Swift Altus - Software & AI" },
-  { value: "consulting", label: "Engineering & Consulting" },
-  { value: "construction", label: "Building Construction" },
 ];
 
 const contactInfo = [

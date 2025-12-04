@@ -1,4 +1,4 @@
-# Swift Tech Group - Comprehensive Design Guidelines
+# Swift Tech Engineers (India) Pvt. Ltd. - Comprehensive Design Guidelines
 
 ## Design Approach: Reference-Based Modern SaaS Aesthetic
 
@@ -204,4 +204,4 @@ Drawing inspiration from modern SaaS platforms like kula.ai, Linear, and Notion 
 
 ---
 
-This comprehensive design system ensures a cohesive, modern, and impressive web presence that elevates Swift Tech Group's brand while maintaining usability and performance across all divisions.
+This comprehensive design system ensures a cohesive, modern, and impressive web presence that elevates Swift Tech Engineers (India) Pvt. Ltd.'s brand while maintaining usability and performance across all companies.

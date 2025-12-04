@@ -10,6 +10,7 @@ import Contact from "@/pages/contact";
 import Engineers from "@/pages/engineers";
 import Altus from "@/pages/altus";
 import Industries from "@/pages/industries";
+import Builders from "@/pages/builders";
 
 function Router() {
   return (
@@ -19,12 +20,9 @@ function Router() {
       <Route path="/contact" component={Contact} />
       <Route path="/engineers" component={Engineers} />
       <Route path="/altus" component={Altus} />
+      <Route path="/builders" component={Builders} />
       <Route path="/industries" component={Industries} />
       <Route path="/industries/:id" component={Industries} />
-      <Route path="/consulting" component={Engineers} />
-      <Route path="/construction" component={Engineers} />
-      <Route path="/services" component={Home} />
-      <Route path="/services/:id" component={Home} />
       <Route component={NotFound} />
     </Switch>
   );

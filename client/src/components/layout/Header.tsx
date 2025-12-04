@@ -20,29 +20,24 @@ const divisions = [
     href: "/engineers",
   },
   {
+    title: "Swift Tech Builders & Constructions",
+    description: "Residential & Industrial Construction",
+    href: "/builders",
+  },
+  {
     title: "Swift Altus",
     description: "AI-Powered Software & Products",
     href: "/altus",
   },
-  {
-    title: "Engineering & Consulting",
-    description: "Professional Engineering Services",
-    href: "/consulting",
-  },
-  {
-    title: "Building Construction",
-    description: "Modern Construction Solutions",
-    href: "/construction",
-  },
 ];
 
 const services = [
-  { title: "Water Treatment Plants", href: "/services/wtp" },
-  { title: "Effluent Treatment", href: "/services/etp" },
-  { title: "Sewage Treatment", href: "/services/stp" },
-  { title: "RO Plants", href: "/services/ro" },
-  { title: "AI Software Development", href: "/services/ai" },
-  { title: "Custom Software", href: "/services/software" },
+  { title: "Water Treatment Plants (WTP)", href: "/engineers#wtp" },
+  { title: "Effluent Treatment Plants (ETP)", href: "/engineers#etp" },
+  { title: "Sewage Treatment Plants (STP)", href: "/engineers#stp" },
+  { title: "Reverse Osmosis (RO) Plants", href: "/engineers#ro" },
+  { title: "Operation & Maintenance", href: "/engineers#om" },
+  { title: "AI Software Development", href: "/altus" },
 ];
 
 interface HeaderProps {
@@ -80,8 +75,8 @@ export default function Header({ onSearchOpen }: HeaderProps) {
                 <span className="text-primary-foreground font-bold text-lg">ST</span>
               </div>
               <div className="hidden sm:block">
-                <span className="font-bold text-lg">Swift Tech</span>
-                <span className="text-muted-foreground text-sm block -mt-1">Group</span>
+                <span className="font-bold text-lg">Swift Tech Engineers</span>
+                <span className="text-muted-foreground text-xs block -mt-1">(India) Pvt. Ltd.</span>
               </div>
             </div>
           </Link>
@@ -90,10 +85,10 @@ export default function Header({ onSearchOpen }: HeaderProps) {
             <NavigationMenuList className="gap-1">
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="bg-transparent">
-                  Divisions
+                  Our Companies
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-1 lg:w-[500px]">
                     {divisions.map((division) => (
                       <li key={division.title}>
                         <NavigationMenuLink asChild>
@@ -140,25 +135,27 @@ export default function Header({ onSearchOpen }: HeaderProps) {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/industries">
-                  <NavigationMenuLink
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/industries"
                     className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     data-testid="link-industries"
                   >
                     Industries
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/about">
-                  <NavigationMenuLink
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/about"
                     className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                     data-testid="link-about"
                   >
                     About
-                  </NavigationMenuLink>
-                </Link>
+                  </Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
@@ -194,7 +191,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
                 <nav className="flex flex-col gap-4 mt-8">
                   <div className="space-y-2">
                     <h3 className="font-semibold text-muted-foreground text-xs uppercase tracking-wider">
-                      Divisions
+                      Our Companies
                     </h3>
                     {divisions.map((division) => (
                       <Link

@@ -11,6 +11,7 @@ import Engineers from "@/pages/engineers";
 import Altus from "@/pages/altus";
 import Industries from "@/pages/industries";
 import Builders from "@/pages/builders";
+import Careers from "@/pages/careers";
 
 function Router() {
   return (
@@ -21,6 +22,7 @@ function Router() {
       <Route path="/engineers" component={Engineers} />
       <Route path="/altus" component={Altus} />
       <Route path="/builders" component={Builders} />
+      <Route path="/careers" component={Careers} />
       <Route path="/industries" component={Industries} />
       <Route path="/industries/:id" component={Industries} />
       <Route component={NotFound} />

@@ -75,8 +75,8 @@ export default function Header({ onSearchOpen }: HeaderProps) {
                 <span className="text-primary-foreground font-bold text-lg">ST</span>
               </div>
               <div className="hidden sm:block">
-                <span className="font-bold text-lg">Swift Tech Engineers</span>
-                <span className="text-muted-foreground text-xs block -mt-1">(India) Pvt. Ltd.</span>
+                <span className="font-bold text-lg">SWIFTTECH</span>
+                <span className="text-muted-foreground text-xs block -mt-1">swifttech.in</span>
               </div>
             </div>
           </Link>
@@ -157,10 +157,22 @@ export default function Header({ onSearchOpen }: HeaderProps) {
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link
+                    href="/careers"
+                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                    data-testid="link-careers"
+                  >
+                    Careers
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 lg:gap-4">
             <Button
               variant="ghost"
               size="icon"
@@ -171,7 +183,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
               <Search className="h-5 w-5" />
             </Button>
             <Link href="/contact">
-              <Button data-testid="button-contact" className="hidden sm:flex">
+              <Button data-testid="button-contact" className="hidden sm:flex" size="sm">
                 Contact Us
               </Button>
             </Link>
@@ -226,6 +238,9 @@ export default function Header({ onSearchOpen }: HeaderProps) {
                   </Link>
                   <Link href="/about" onClick={() => setIsMobileMenuOpen(false)}>
                     <div className="block py-2 font-medium">About</div>
+                  </Link>
+                  <Link href="/careers" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="block py-2 font-medium">Careers</div>
                   </Link>
                   <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                     <Button className="w-full mt-4">Contact Us</Button>

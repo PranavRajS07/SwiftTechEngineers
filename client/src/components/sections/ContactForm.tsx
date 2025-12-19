@@ -21,10 +21,10 @@ const divisions = [
 ];
 
 const contactInfo = [
-  { icon: Mail, label: "Email", value: "info@swifttech.in" },
-  { icon: Phone, label: "Phone", value: "+91 1234 567890" },
-  { icon: MapPin, label: "Location", value: "Bangalore, India" },
-  { icon: Clock, label: "Hours", value: "Mon-Sat: 9AM - 6PM IST" },
+  { icon: Mail, label: "Email", value: "sales@swifttech.in" },
+  { icon: Phone, label: "Phone", value: "+91 44 2486 3790 / 4861 9190" },
+  { icon: MapPin, label: "Location", value: "Chennai, Tamil Nadu, India" },
+  { icon: Clock, label: "Fax", value: "+91 4861 9190" },
 ];
 
 export default function ContactForm() {
@@ -58,7 +58,7 @@ export default function ContactForm() {
             <h2 className="text-2xl font-bold mb-4">Thank You!</h2>
             <p className="text-muted-foreground mb-8">
               Your message has been received. Our team will review your inquiry 
-              and get back to you within 24 hours.
+              and get back to you within 24 hours at sales@swifttech.in.
             </p>
             <Button onClick={() => setIsSubmitted(false)} data-testid="button-send-another">
               Send Another Message
@@ -79,7 +79,7 @@ export default function ContactForm() {
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Have a project in mind? We'd love to hear about it. Send us a message 
-            and we'll respond within 24 hours.
+            and we'll respond within 24 hours to sales@swifttech.in.
           </p>
         </div>
 
@@ -91,8 +91,8 @@ export default function ContactForm() {
                 {contactInfo.map((item, index) => {
                   const Icon = item.icon;
                   return (
-                    <div key={index} className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center">
+                    <div key={index} className="flex items-start gap-4">
+                      <div className="w-10 h-10 rounded-md bg-primary/10 flex items-center justify-center flex-shrink-0">
                         <Icon className="h-5 w-5 text-primary" />
                       </div>
                       <div>
@@ -106,11 +106,24 @@ export default function ContactForm() {
             </div>
 
             <div>
-              <h3 className="font-semibold text-lg mb-4">Global Presence</h3>
-              <div className="flex flex-wrap gap-2">
-                {["India", "Sri Lanka", "Bangladesh", "Maldives", "Saudi Arabia", "Dubai", "Kuwait"].map((country) => (
-                  <Badge key={country} variant="secondary">{country}</Badge>
-                ))}
+              <h3 className="font-semibold text-lg mb-4">Address</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                SWIFTTECH ENGINEERS (INDIA) PVT. LTD.<br/>
+                No. 42, Sivan Street,<br/>
+                Sri Venkatesaperumal Nagar,<br/>
+                Valasaravakkam,<br/>
+                Chennai - 600 087,<br/>
+                Tamil Nadu, India
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold text-lg mb-4">Department Emails</h3>
+              <div className="space-y-2 text-sm">
+                <p><span className="text-muted-foreground">Projects:</span> <span className="font-medium">projects@swifttech.in</span></p>
+                <p><span className="text-muted-foreground">Sales:</span> <span className="font-medium">sales@swifttech.in</span></p>
+                <p><span className="text-muted-foreground">Purchase:</span> <span className="font-medium">purchase@swifttech.in</span></p>
+                <p><span className="text-muted-foreground">Admin:</span> <span className="font-medium">admin@swifttech.in</span></p>
               </div>
             </div>
           </div>

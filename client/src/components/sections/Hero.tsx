@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ArrowRight, Play, ChevronDown } from "lucide-react";
 import { Link } from "wouter";
-import heroImage from "@assets/generated_images/modern_corporate_office_building.png";
+import heroImage from "@assets/generated_images/water_treatment_facility.png";
 
 const rotatingWords = [
   "WTP & ETP",
@@ -63,7 +63,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-lg sm:text-xl text-white/80 max-w-3xl mx-auto mb-10 animate-fade-in leading-relaxed" style={{ animationDelay: "0.2s" }}>
-          Pioneer in industrial water and wastewater treatment solutions. 
+          Pioneer in industrial water and wastewater treatment solutions since 2006. 
           Designing, manufacturing, and commissioning WTP, ETP, STP, RO plants with state-of-the-art technologies.
         </p>
 

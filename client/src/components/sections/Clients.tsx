@@ -61,7 +61,7 @@ export default function Clients() {
             Trusted by Industry Leaders
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Over 70 satisfied clients globally — from Fortune 500 corporations and
+            Over 70 satisfied clients globally. From Fortune 500 corporations and
             leading industrial groups to public sector undertakings across India and abroad.
           </p>
         </div>

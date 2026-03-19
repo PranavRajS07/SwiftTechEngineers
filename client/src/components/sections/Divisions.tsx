@@ -151,7 +151,7 @@ export default function Divisions() {
             Three Companies, One Vision
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-            Comprehensive solutions across water treatment, construction, and AI software —
+            Comprehensive solutions across water treatment, construction, and AI software.
             all under the trusted Swift Tech umbrella.
           </p>
         </div>

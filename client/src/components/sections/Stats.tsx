@@ -72,7 +72,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
   }, [value, hasAnimated]);
 
   return (
-    <div ref={ref} className="text-4xl sm:text-5xl font-bold text-foreground">
+    <div ref={ref} className="text-4xl sm:text-5xl font-bold">
       {count}{suffix}
     </div>
   );
@@ -80,16 +80,16 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
 
 export default function Stats() {
   return (
-    <section className="py-24 bg-primary text-primary-foreground" data-testid="section-stats">
+    <section className="py-24 bg-white dark:bg-slate-900 text-foreground" data-testid="section-stats">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">
+          <Badge variant="outline" className="mb-4">
             Our Impact
           </Badge>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 dark:text-white">
             Numbers That Speak
           </h2>
-          <p className="text-primary-foreground/80 max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg dark:text-gray-300">
             A track record of excellence in engineering and innovation.
           </p>
         </div>
@@ -103,12 +103,12 @@ export default function Stats() {
                 className="text-center"
                 data-testid={`stat-${index}`}
               >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/10 mb-4">
-                  <Icon className="h-8 w-8" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 mb-4">
+                  <Icon className="h-8 w-8 text-primary" />
                 </div>
                 <AnimatedNumber value={stat.value} suffix={stat.suffix} />
-                <div className="font-medium mt-2">{stat.label}</div>
-                <div className="text-primary-foreground/60 text-sm mt-1">{stat.description}</div>
+                <div className="font-medium mt-2 dark:text-white">{stat.label}</div>
+                <div className="text-muted-foreground text-sm mt-1 dark:text-gray-300">{stat.description}</div>
               </div>
             );
           })}

@@ -63,8 +63,8 @@ export default function Header({ onSearchOpen }: HeaderProps) {
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         isScrolled
-          ? "bg-background/85 backdrop-blur-lg border-b border-border shadow-sm"
-          : "bg-transparent"
+          ? "bg-background/95 backdrop-blur-lg border-b border-border shadow-sm"
+          : "bg-background/80 backdrop-blur-md border-b border-border/50"
       )}
       data-testid="header"
     >
@@ -75,26 +75,14 @@ export default function Header({ onSearchOpen }: HeaderProps) {
               <img
                 src={logoImg}
                 alt="SwiftTech Engineers Logo"
-                className="h-14 lg:h-16 w-auto"
-                style={{ filter: isScrolled ? "none" : "drop-shadow(0 2px 6px rgba(0,0,0,0.4))" }}
+                className="h-16 lg:h-20 w-auto"
+                style={{ maxWidth: "200px" }}
               />
               <div className="hidden sm:block">
-                <span
-                  className="font-extrabold text-lg tracking-widest"
-                  style={{
-                    color: isScrolled ? undefined : "white",
-                    letterSpacing: "0.12em",
-                  }}
-                >
+                <span className="font-extrabold text-lg tracking-widest">
                   SWIFTTECH
                 </span>
-                <span
-                  className="text-xs block -mt-0.5 tracking-wide font-medium"
-                  style={{
-                    color: isScrolled ? "hsl(var(--muted-foreground))" : "rgba(255,255,255,0.7)",
-                    letterSpacing: "0.05em",
-                  }}
-                >
+                <span className="text-xs block -mt-0.5 tracking-wide font-medium text-muted-foreground">
                   Engineers (India) Pvt. Ltd.
                 </span>
               </div>
@@ -104,10 +92,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className="gap-1">
               <NavigationMenuItem>
-                <NavigationMenuTrigger
-                  className="bg-transparent"
-                  style={{ color: isScrolled ? undefined : "white" }}
-                >
+                <NavigationMenuTrigger className="bg-transparent">
                   Our Companies
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -117,6 +102,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
                         <NavigationMenuLink asChild>
                           <Link
                             href={division.href}
+                            onClick={() => window.scrollTo(0, 0)}
                             className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                             data-testid={`link-division-${division.title.toLowerCase().replace(/\s+/g, "-")}`}
                           >
@@ -135,10 +121,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger
-                  className="bg-transparent"
-                  style={{ color: isScrolled ? undefined : "white" }}
-                >
+                <NavigationMenuTrigger className="bg-transparent">
                   Services
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
@@ -165,7 +148,6 @@ export default function Header({ onSearchOpen }: HeaderProps) {
                   <Link
                     href="/industries"
                     className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                    style={{ color: isScrolled ? undefined : "white" }}
                     data-testid="link-industries"
                   >
                     Industries
@@ -178,7 +160,6 @@ export default function Header({ onSearchOpen }: HeaderProps) {
                   <Link
                     href="/about"
                     className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                    style={{ color: isScrolled ? undefined : "white" }}
                     data-testid="link-about"
                   >
                     About
@@ -191,7 +172,6 @@ export default function Header({ onSearchOpen }: HeaderProps) {
                   <Link
                     href="/careers"
                     className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-transparent px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                    style={{ color: isScrolled ? undefined : "white" }}
                     data-testid="link-careers"
                   >
                     Careers

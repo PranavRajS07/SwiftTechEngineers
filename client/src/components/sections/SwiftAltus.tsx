@@ -68,13 +68,13 @@ export default function SwiftAltus() {
             </div>
 
             <div className="flex flex-wrap gap-4">
-              <Link href="/altus">
+              <Link href="/altus" onClick={() => window.scrollTo(0, 0)}>
                 <Button className="group" data-testid="button-explore-altus">
                   Explore Swift Altus
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Button>
               </Link>
-              <Link href="/altus/products">
+              <Link href="/altus/products" onClick={() => window.scrollTo(0, 0)}>
                 <Button variant="outline" data-testid="button-view-products">
                   <Rocket className="mr-2 h-4 w-4" />
                   View Products

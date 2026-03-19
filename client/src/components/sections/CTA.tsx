@@ -21,7 +21,7 @@ export default function CTA() {
               construction services, our team is ready to help you achieve your goals.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/contact" onClick={() => window.scrollTo(0, 0)}>
                 <Button 
                   size="lg" 
                   variant="secondary" 

@@ -44,17 +44,17 @@ export default function Hero() {
 
       {/* Animated water droplet particles */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        {[...Array(12)].map((_, i) => (
+        {[...Array(8)].map((_, i) => (
           <div
             key={i}
-            className="absolute rounded-full bg-cyan-400/20 animate-float-particle"
+            className="absolute rounded-full bg-cyan-400/10 animate-float-particle"
             style={{
-              width: `${6 + (i % 4) * 5}px`,
-              height: `${6 + (i % 4) * 5}px`,
-              left: `${5 + i * 8}%`,
-              top: `${10 + (i % 5) * 16}%`,
-              animationDelay: `${i * 0.6}s`,
-              animationDuration: `${4 + (i % 3)}s`,
+              width: `${4 + (i % 3) * 3}px`,
+              height: `${4 + (i % 3) * 3}px`,
+              left: i < 4 ? `${2 + i * 15}%` : `${60 + (i - 4) * 10}%`,
+              top: `${15 + (i % 4) * 20}%`,
+              animationDelay: `${i * 0.8}s`,
+              animationDuration: `${5 + (i % 2) * 2}s`,
             }}
           />
         ))}
@@ -108,7 +108,7 @@ export default function Hero() {
           className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto mb-10 animate-fade-in leading-relaxed"
           style={{ animationDelay: "0.2s" }}
         >
-          We design, build and operate complete water treatment systems — trusted by
+          We design, build and operate complete water treatment systems. Trusted by
           industries across India and beyond.
         </p>
 
@@ -116,13 +116,13 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in"
           style={{ animationDelay: "0.3s" }}
         >
-          <Link href="/engineers">
+          <Link href="/engineers" onClick={() => window.scrollTo(0, 0)}>
             <Button size="lg" className="group text-base" data-testid="button-explore-services">
               Explore Solutions
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Button>
           </Link>
-          <Link href="/contact">
+          <Link href="/contact" onClick={() => window.scrollTo(0, 0)}>
             <Button
               size="lg"
               variant="outline"
@@ -132,33 +132,6 @@ export default function Hero() {
               Get a Free Quote
             </Button>
           </Link>
-        </div>
-
-        <div
-          className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 animate-fade-in"
-          style={{ animationDelay: "0.4s" }}
-        >
-          {[
-            { value: "200+", label: "Plants Delivered" },
-            { value: "50+", label: "Clients Served" },
-            { value: "18+", label: "Years Experience" },
-            { value: "6+", label: "Countries" },
-          ].map((stat, index) => (
-            <div key={index} className="text-center">
-              <div
-                className="text-3xl sm:text-4xl font-bold text-white"
-                data-testid={`text-stat-value-${index}`}
-              >
-                {stat.value}
-              </div>
-              <div
-                className="text-white/60 text-sm mt-1"
-                data-testid={`text-stat-label-${index}`}
-              >
-                {stat.label}
-              </div>
-            </div>
-          ))}
         </div>
       </div>
 

@@ -7,6 +7,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ArrowRight, Car, Zap, Cpu, Pill, Fuel, UtensilsCrossed, Wine, Candy, Factory, Shirt } from "lucide-react";
+import waterFacility from "@assets/generated_images/water_treatment_facility.png";
 
 const industries = [
   { 
@@ -99,14 +100,19 @@ export default function Industries() {
       <Header onSearchOpen={() => setSearchOpen(true)} />
       
       <main className="pt-20">
-        <section className="py-24 bg-gradient-to-b from-primary/5 to-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto">
-              <Badge variant="outline" className="mb-4">Industries We Serve</Badge>
+        <section className="relative py-24 min-h-[60vh] flex items-center">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${waterFacility})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/70" />
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto text-primary-foreground">
+              <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">Industries We Serve</Badge>
               <h1 className="text-4xl sm:text-5xl font-bold mb-6">
                 Powering Diverse Industries
               </h1>
-              <p className="text-muted-foreground text-lg leading-relaxed">
+              <p className="text-primary-foreground/90 text-lg leading-relaxed">
                 Our water treatment solutions serve critical industries across the globe, 
                 from automotive giants to pharmaceutical leaders, ensuring sustainable 
                 operations and regulatory compliance.
@@ -115,7 +121,7 @@ export default function Industries() {
           </div>
         </section>
 
-        <section className="py-24">
+        <section className="py-24 bg-gradient-to-b from-background to-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid gap-8">
               {industries.map((industry, index) => {

@@ -30,12 +30,11 @@ import {
   UserCheck,
   Calculator,
   PhoneCall,
-} from "lucide-react";
-
+} from "lucide-react";import officeImage from "@assets/generated_images/modern_corporate_office_building.png";
 const values = [
   { icon: Heart, title: "Passion for Excellence", description: "We deliver the highest quality water treatment solutions, built to last." },
   { icon: Leaf, title: "Environmental Commitment", description: "Protecting the environment through sustainable water technologies is our mission." },
-  { icon: Users, title: "Team Growth", description: "We invest in our people — structured mentoring, training, and career growth." },
+  { icon: Users, title: "Team Growth", description: "We invest in our people. Structured mentoring, training, and career growth." },
   { icon: Brain, title: "Innovation", description: "We stay at the forefront of water science and digital technology." },
 ];
 
@@ -92,7 +91,7 @@ const openings: Job[] = [
     type: "On-site",
     level: "Fresher",
     description:
-      "Assist senior engineers on construction sites — residential, industrial, and RCC tank works. Prepare daily progress reports and coordinate with site teams.",
+      "Assist senior engineers on construction sites. Residential, industrial, and RCC tank works. Prepare daily progress reports and coordinate with site teams.",
   },
   {
     title: "On-site Civil Engineer",
@@ -137,7 +136,7 @@ const openings: Job[] = [
     type: "Off-site",
     level: "Fresher",
     description:
-      "Assist with day-to-day accounting — billing, invoicing, bank reconciliation, and data entry. Tally ERP knowledge preferred.",
+      "Assist with day-to-day accounting. Billing, invoicing, bank reconciliation, and data entry. Tally ERP knowledge preferred.",
   },
   {
     title: "Accounts Manager / Senior Accountant",
@@ -155,7 +154,7 @@ const openings: Job[] = [
     type: "Off-site",
     level: "Fresher",
     description:
-      "Manage front office operations — handle calls, greet visitors, manage correspondence, and provide administrative support to the team.",
+      "Manage front office operations. Handle calls, greet visitors, manage correspondence, and provide administrative support to the team.",
   },
   {
     title: "Full Stack Developer",
@@ -250,13 +249,18 @@ export default function Careers() {
 
       <main className="pt-24 lg:pt-28">
         {/* Hero */}
-        <section className="py-20 bg-gradient-to-b from-primary/10 to-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl mx-auto">
-            <Badge variant="outline" className="mb-4">Join Our Team</Badge>
+        <section className="relative py-20 min-h-[60vh] flex items-center">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${officeImage})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/70" />
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl mx-auto text-primary-foreground">
+            <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">Join Our Team</Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
               Work With Purpose
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-primary-foreground/90 leading-relaxed max-w-2xl mx-auto">
               Be part of a team building cleaner water, stronger infrastructure, and smarter
               technology for India and beyond.
             </p>
@@ -288,7 +292,7 @@ export default function Careers() {
         </section>
 
         {/* Job listings */}
-        <section className="py-20">
+        <section className="py-20 bg-gradient-to-b from-background to-muted/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <Badge variant="outline" className="mb-4">Open Positions</Badge>
@@ -347,9 +351,6 @@ export default function Careers() {
                       </div>
                     </div>
                     <div className="flex gap-2 mb-3">
-                      <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${levelColor[job.level]}`}>
-                        {job.level}
-                      </span>
                       <span className={`text-xs font-medium px-2 py-0.5 rounded-full flex items-center gap-1 ${typeColor[job.type]}`}>
                         <MapPin className="h-3 w-3" />
                         {job.type}

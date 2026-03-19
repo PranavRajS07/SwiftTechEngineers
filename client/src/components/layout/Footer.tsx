@@ -36,7 +36,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <img src={logoImg} alt="SwiftTech Logo" className="h-14 w-auto" />
+              <img src={logoImg} alt="SwiftTech Logo" className="h-16 w-auto" style={{ maxWidth: "180px" }} />
               <div>
                 <span className="font-extrabold text-base tracking-widest" style={{ letterSpacing: "0.12em" }}>
                   SWIFTTECH

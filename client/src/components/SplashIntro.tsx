@@ -58,8 +58,8 @@ export default function SplashIntro({ onComplete }: SplashIntroProps) {
         <div
           style={{
             position: "relative",
-            width: "180px",
-            height: "218px",
+            width: "220px",
+            height: "240px",
           }}
         >
           {/* Gray skeleton logo underneath */}

@@ -6,14 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { CheckCircle, Award, Globe, Users, Target, Eye } from "lucide-react";
-
-const timeline = [
-  { year: "2006", title: "Founded", description: "Swift Tech Engineers (India) Pvt. Ltd. established as a water treatment company" },
-  { year: "2010", title: "ISO Certified", description: "Achieved ISO 9001:2015 certification for quality management" },
-  { year: "2015", title: "Global Expansion", description: "Extended operations to Sri Lanka, Bangladesh, Maldives, Saudi Arabia, Dubai & Kuwait" },
-  { year: "2020", title: "Swift Tech Builders", description: "Launched construction division for residential & industrial buildings" },
-  { year: "2024", title: "Swift Altus Launch", description: "Launched AI software division for digital transformation" },
-];
+import officeImage from "@assets/generated_images/modern_corporate_office_building.png";
 
 const values = [
   { icon: CheckCircle, title: "Quality First", description: "Uncompromising commitment to delivering excellence in every project" },
@@ -30,14 +23,19 @@ export default function About() {
       <Header onSearchOpen={() => setSearchOpen(true)} />
       
       <main className="pt-20">
-        <section className="py-24 bg-gradient-to-b from-primary/5 to-background">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto">
-              <Badge variant="outline" className="mb-4">About Us</Badge>
+        <section className="relative py-24 min-h-[60vh] flex items-center">
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${officeImage})` }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/70" />
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-3xl mx-auto text-primary-foreground">
+              <Badge variant="secondary" className="mb-4 bg-white/20 text-white border-white/30">About Us</Badge>
               <h1 className="text-4xl sm:text-5xl font-bold mb-6">
                 The Water Specialist Since 2006
               </h1>
-              <p className="text-muted-foreground text-lg leading-relaxed">
+              <p className="text-primary-foreground/90 text-lg leading-relaxed">
                 Swift Tech Engineers (India) Pvt. Ltd. is a pioneer in industrial water and 
                 wastewater treatment solutions with an established reputation for innovative 
                 design and manufacturing excellence. We serve all over India as well as abroad 
@@ -47,7 +45,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-24">
+        <section className="py-24 bg-gradient-to-b from-background to-muted/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12">
               <Card className="p-8">
@@ -79,38 +77,7 @@ export default function About() {
           </div>
         </section>
 
-        <section className="py-24 bg-card">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <Badge variant="outline" className="mb-4">Our Journey</Badge>
-              <h2 className="text-3xl sm:text-4xl font-bold">Company Timeline</h2>
-            </div>
-            
-            <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-px bg-border hidden md:block" />
-              <div className="space-y-12">
-                {timeline.map((item, index) => (
-                  <div 
-                    key={index} 
-                    className={`flex flex-col md:flex-row items-center gap-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
-                  >
-                    <div className={`flex-1 ${index % 2 === 0 ? "md:text-right" : "md:text-left"} text-center md:text-inherit`}>
-                      <Card className="inline-block p-6">
-                        <Badge variant="secondary" className="mb-2">{item.year}</Badge>
-                        <h3 className="font-bold text-lg mb-2">{item.title}</h3>
-                        <p className="text-muted-foreground text-sm">{item.description}</p>
-                      </Card>
-                    </div>
-                    <div className="w-4 h-4 rounded-full bg-primary z-10 hidden md:block" />
-                    <div className="flex-1 hidden md:block" />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-24">
+        <section className="py-24 bg-gradient-to-b from-background to-muted/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <Badge variant="outline" className="mb-4">Our Values</Badge>

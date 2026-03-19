@@ -367,3 +367,71 @@
 .animate-wave-path-2 {
   animation: wave-path-2 8s ease-in-out infinite;
 }
+
+@keyframes water-fill-logo {
+  0% {
+    clip-path: polygon(
+      -5% 110%,
+      105% 110%,
+      105% 110%,
+      -5% 110%
+    );
+  }
+  10% {
+    clip-path: polygon(
+      -5% 92%,
+      30% 89%,
+      60% 93%,
+      105% 90%,
+      105% 110%,
+      -5% 110%
+    );
+  }
+  35% {
+    clip-path: polygon(
+      -5% 66%,
+      25% 62%,
+      55% 67%,
+      85% 63%,
+      105% 66%,
+      105% 110%,
+      -5% 110%
+    );
+  }
+  65% {
+    clip-path: polygon(
+      -5% 36%,
+      30% 31%,
+      60% 38%,
+      85% 33%,
+      105% 37%,
+      105% 110%,
+      -5% 110%
+    );
+  }
+  90% {
+    clip-path: polygon(
+      -5% 8%,
+      30% 4%,
+      60% 10%,
+      85% 5%,
+      105% 8%,
+      105% 110%,
+      -5% 110%
+    );
+  }
+  100% {
+    clip-path: polygon(
+      -5% -5%,
+      105% -5%,
+      105% 110%,
+      -5% 110%
+    );
+  }
+}
+
+@keyframes shimmer-fill {
+  0% { opacity: 0; transform: scaleY(0); transform-origin: bottom; }
+  50% { opacity: 1; transform: scaleY(1); transform-origin: bottom; }
+  100% { opacity: 0; }
+}

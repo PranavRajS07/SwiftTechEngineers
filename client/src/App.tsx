@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Switch, Route } from "wouter";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
@@ -12,6 +13,7 @@ import Altus from "@/pages/altus";
 import Industries from "@/pages/industries";
 import Builders from "@/pages/builders";
 import Careers from "@/pages/careers";
+import SplashIntro from "@/components/SplashIntro";
 
 function Router() {
   return (
@@ -31,11 +33,23 @@ function Router() {
 }
 
 function App() {
+  const [splashDone, setSplashDone] = useState(false);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
-        <Router />
+        {!splashDone && (
+          <SplashIntro onComplete={() => setSplashDone(true)} />
+        )}
+        <div
+          style={{
+            opacity: splashDone ? 1 : 0,
+            transition: "opacity 0.6s ease",
+          }}
+        >
+          <Router />
+        </div>
       </TooltipProvider>
     </QueryClientProvider>
   );

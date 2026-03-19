@@ -105,12 +105,11 @@ export default function Hero() {
         </div>
 
         <p
-          className="text-base sm:text-lg text-white/70 max-w-3xl mx-auto mb-10 animate-fade-in leading-relaxed"
+          className="text-base sm:text-lg text-white/70 max-w-2xl mx-auto mb-10 animate-fade-in leading-relaxed"
           style={{ animationDelay: "0.2s" }}
         >
-          Swift Tech Engineers (India) Pvt. Ltd. designs, manufactures &amp; commissions
-          WTP, ETP, STP, RO &amp; DM plants for industrial and municipal clients. Serving
-          Chennai, India and 6+ countries with end-to-end water treatment solutions — built to last.
+          We design, build and operate complete water treatment systems — trusted by
+          industries across India and beyond.
         </p>
 
         <div
@@ -140,10 +139,10 @@ export default function Hero() {
           style={{ animationDelay: "0.4s" }}
         >
           {[
-            { value: "500+", label: "Projects Completed" },
-            { value: "70+", label: "Clients Worldwide" },
+            { value: "200+", label: "Plants Delivered" },
+            { value: "50+", label: "Clients Served" },
             { value: "18+", label: "Years Experience" },
-            { value: "7+", label: "Countries Served" },
+            { value: "6+", label: "Countries" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <div

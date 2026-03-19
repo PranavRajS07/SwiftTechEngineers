@@ -1,6 +1,7 @@
 import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import logoImg from "@assets/LOGO_1773945583721.png";
 import { 
   Linkedin, 
   Mail, 
@@ -34,13 +35,15 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-md bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">ST</span>
-              </div>
+            <div className="flex items-center gap-3">
+              <img src={logoImg} alt="SwiftTech Logo" className="h-10 w-auto" />
               <div>
-                <span className="font-bold text-lg">Swift Tech Engineers</span>
-                <span className="text-muted-foreground text-xs block -mt-1">(India) Pvt. Ltd.</span>
+                <span className="font-extrabold text-base tracking-widest" style={{ letterSpacing: "0.12em" }}>
+                  SWIFTTECH
+                </span>
+                <span className="text-muted-foreground text-xs block -mt-0.5">
+                  Engineers (India) Pvt. Ltd.
+                </span>
               </div>
             </div>
             <p className="text-muted-foreground text-sm leading-relaxed">

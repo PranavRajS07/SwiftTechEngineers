@@ -4,21 +4,21 @@ import { Award, Users, Globe, Building } from "lucide-react";
 
 const stats = [
   { 
-    value: 500, 
+    value: 200, 
     suffix: "+", 
-    label: "Projects Completed", 
+    label: "Plants Delivered", 
     icon: Award,
-    description: "Successfully delivered worldwide"
+    description: "Successfully commissioned worldwide"
   },
   { 
-    value: 70, 
+    value: 50, 
     suffix: "+", 
     label: "Satisfied Clients", 
     icon: Users,
     description: "Across multiple industries"
   },
   { 
-    value: 7, 
+    value: 6, 
     suffix: "+", 
     label: "Countries Served", 
     icon: Globe,

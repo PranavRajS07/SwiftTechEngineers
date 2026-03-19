@@ -98,15 +98,15 @@ export default function Footer() {
             <div className="space-y-3">
               <div className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 mt-0.5 flex-shrink-0" />
-                <span>Serving India, Sri Lanka, Bangladesh, Maldives, Saudi Arabia, UAE & Kuwait</span>
+                <span>No. 42, Sivan Street, Sri Venkatesaperumal Nagar, Valasaravakkam, Chennai – 600 087</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Mail className="h-4 w-4" />
-                <span>info@swifttech.in</span>
+                <Mail className="h-4 w-4 flex-shrink-0" />
+                <span>sales@swifttech.in</span>
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Phone className="h-4 w-4" />
-                <span>Contact us for inquiries</span>
+                <Phone className="h-4 w-4 flex-shrink-0" />
+                <span>044 – 4861 9190</span>
               </div>
             </div>
             <div className="pt-2">

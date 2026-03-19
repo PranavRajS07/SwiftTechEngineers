@@ -22,29 +22,53 @@ const divisions = [
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "sales@swifttech.in" },
-  { icon: Phone, label: "Phone", value: "+91 44 2486 3790 / 4861 9190" },
-  { icon: MapPin, label: "Location", value: "Chennai, Tamil Nadu, India" },
-  { icon: Clock, label: "Fax", value: "+91 4861 9190" },
+  { icon: Phone, label: "Phone", value: "044 - 4861 9190" },
+  { icon: MapPin, label: "Location", value: "Valasaravakkam, Chennai - 600 087" },
+  { icon: Clock, label: "Office Hours", value: "Mon – Sat, 9:00 AM – 6:00 PM" },
 ];
 
 export default function ContactForm() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [selectedDivision, setSelectedDivision] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // todo: remove mock functionality - this would be actual form submission
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    toast({
-      title: "Message sent!",
-      description: "We'll get back to you within 24 hours.",
-    });
+
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
+      company: (form.elements.namedItem("company") as HTMLInputElement).value,
+      division: selectedDivision,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (res.ok) {
+        setIsSubmitting(false);
+        setIsSubmitted(true);
+        toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
+      } else {
+        throw new Error("Server error");
+      }
+    } catch {
+      setIsSubmitting(false);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or email us directly at sales@swifttech.in.",
+        variant: "destructive",
+      });
+    }
   };
 
   if (isSubmitted) {
@@ -133,18 +157,20 @@ export default function ContactForm() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Full Name</label>
-                  <Input 
-                    placeholder="John Doe" 
-                    required 
+                  <Input
+                    name="name"
+                    placeholder="John Doe"
+                    required
                     data-testid="input-name"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Email Address</label>
-                  <Input 
-                    type="email" 
-                    placeholder="john@company.com" 
-                    required 
+                  <Input
+                    name="email"
+                    type="email"
+                    placeholder="john@company.com"
+                    required
                     data-testid="input-email"
                   />
                 </div>
@@ -153,16 +179,18 @@ export default function ContactForm() {
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Company</label>
-                  <Input 
-                    placeholder="Your Company" 
+                  <Input
+                    name="company"
+                    placeholder="Your Company"
                     data-testid="input-company"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Phone</label>
-                  <Input 
-                    type="tel" 
-                    placeholder="+91 98765 43210" 
+                  <Input
+                    name="phone"
+                    type="tel"
+                    placeholder="+91 98765 43210"
                     data-testid="input-phone"
                   />
                 </div>
@@ -170,7 +198,7 @@ export default function ContactForm() {
 
               <div className="space-y-2">
                 <label className="text-sm font-medium">Division</label>
-                <Select>
+                <Select onValueChange={(v) => setSelectedDivision(v)}>
                   <SelectTrigger data-testid="select-division">
                     <SelectValue placeholder="Select a division" />
                   </SelectTrigger>
@@ -186,7 +214,8 @@ export default function ContactForm() {
 
               <div className="space-y-2">
                 <label className="text-sm font-medium">Message</label>
-                <Textarea 
+                <Textarea
+                  name="message"
                   placeholder="Tell us about your project requirements..."
                   rows={5}
                   required

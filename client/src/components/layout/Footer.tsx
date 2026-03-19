@@ -3,8 +3,6 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { 
   Linkedin, 
-  Twitter, 
-  Facebook, 
   Mail, 
   Phone, 
   MapPin
@@ -52,12 +50,6 @@ export default function Footer() {
             <div className="flex gap-2">
               <Button variant="outline" size="icon" data-testid="button-linkedin">
                 <Linkedin className="h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="icon" data-testid="button-twitter">
-                <Twitter className="h-4 w-4" />
-              </Button>
-              <Button variant="outline" size="icon" data-testid="button-facebook">
-                <Facebook className="h-4 w-4" />
               </Button>
             </div>
           </div>

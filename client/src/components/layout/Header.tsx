@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "wouter";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import {
@@ -10,8 +10,9 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Menu, X, ChevronDown, Search } from "lucide-react";
+import { Menu, Search } from "lucide-react";
 import { cn } from "@/lib/utils";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const divisions = [
   {
@@ -47,7 +48,6 @@ interface HeaderProps {
 export default function Header({ onSearchOpen }: HeaderProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [location] = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -172,7 +172,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <div className="flex items-center gap-2 lg:gap-4">
+          <div className="flex items-center gap-1 lg:gap-2">
             <Button
               variant="ghost"
               size="icon"
@@ -182,6 +182,7 @@ export default function Header({ onSearchOpen }: HeaderProps) {
             >
               <Search className="h-5 w-5" />
             </Button>
+            <ThemeToggle />
             <Link href="/contact">
               <Button data-testid="button-contact" className="hidden sm:flex" size="sm">
                 Contact Us

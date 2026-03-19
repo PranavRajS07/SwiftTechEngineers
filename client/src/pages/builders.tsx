@@ -1,7 +1,6 @@
 import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import ThemeToggle from "@/components/ThemeToggle";
 import SearchDialog from "@/components/SearchDialog";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
@@ -65,9 +64,6 @@ export default function Builders() {
   return (
     <div className="min-h-screen bg-background" data-testid="page-builders">
       <Header onSearchOpen={() => setSearchOpen(true)} />
-      <div className="fixed top-5 right-4 sm:right-24 z-50">
-        <ThemeToggle />
-      </div>
       
       <main className="pt-20">
         <section className="relative py-24 overflow-hidden">

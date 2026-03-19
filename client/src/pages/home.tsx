@@ -8,10 +8,8 @@ import SwiftAltus from "@/components/sections/SwiftAltus";
 import Industries from "@/components/sections/Industries";
 import Stats from "@/components/sections/Stats";
 import Clients from "@/components/sections/Clients";
-import Testimonials from "@/components/sections/Testimonials";
 import CTA from "@/components/sections/CTA";
 import SearchDialog from "@/components/SearchDialog";
-import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   const [searchOpen, setSearchOpen] = useState(false);
@@ -19,9 +17,6 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background" data-testid="page-home">
       <Header onSearchOpen={() => setSearchOpen(true)} />
-      <div className="fixed top-5 right-4 sm:right-24 z-50">
-        <ThemeToggle />
-      </div>
       <main>
         <Hero />
         <Divisions />
@@ -30,7 +25,6 @@ export default function Home() {
         <Industries />
         <Stats />
         <Clients />
-        <Testimonials />
         <CTA />
       </main>
       <Footer />

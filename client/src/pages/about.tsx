@@ -2,7 +2,6 @@ import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SearchDialog from "@/components/SearchDialog";
-import ThemeToggle from "@/components/ThemeToggle";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -29,9 +28,6 @@ export default function About() {
   return (
     <div className="min-h-screen bg-background" data-testid="page-about">
       <Header onSearchOpen={() => setSearchOpen(true)} />
-      <div className="fixed top-5 right-4 sm:right-24 z-50">
-        <ThemeToggle />
-      </div>
       
       <main className="pt-20">
         <section className="py-24 bg-gradient-to-b from-primary/5 to-background">

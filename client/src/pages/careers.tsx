@@ -2,7 +2,6 @@ import { useState } from "react";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import SearchDialog from "@/components/SearchDialog";
-import ThemeToggle from "@/components/ThemeToggle";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -71,8 +70,8 @@ export default function Careers() {
   return (
     <div className="min-h-screen bg-background" data-testid="page-careers">
       <Header onSearchOpen={() => setSearchOpen(true)} />
-      <div className="fixed top-5 right-4 sm:right-24 z-50">
-        <ThemeToggle />
+      <div className="hidden">
+        {/* theme toggle now in header */}
       </div>
 
       <main className="pt-20">

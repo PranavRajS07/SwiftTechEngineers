@@ -2,29 +2,26 @@ import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 
 const clients = [
-  { name: "Tata Steel", domain: "tatasteel.com" },
-  { name: "BHEL", domain: "bhel.in" },
-  { name: "NTPC", domain: "ntpc.co.in" },
-  { name: "SAIL", domain: "sail.co.in" },
-  { name: "Reliance Industries", domain: "ril.com" },
-  { name: "Adani Group", domain: "adani.com" },
-  { name: "Maruti Suzuki", domain: "marutisuzuki.com" },
-  { name: "Hero MotoCorp", domain: "heromotocorp.com" },
-  { name: "Mahindra", domain: "mahindra.com" },
-  { name: "L&T", domain: "larsentoubro.com" },
-  { name: "UltraTech Cement", domain: "ultratechcement.com" },
-  { name: "Cipla", domain: "cipla.com" },
-  { name: "Sun Pharma", domain: "sunpharma.com" },
-  { name: "Bajaj Auto", domain: "bajajauto.com" },
-  { name: "Infosys", domain: "infosys.com" },
-  { name: "Wipro", domain: "wipro.com" },
-  { name: "TCS", domain: "tcs.com" },
-  { name: "HCL Tech", domain: "hcltech.com" },
-  { name: "Tech Mahindra", domain: "techmahindra.com" },
-  { name: "Dr. Reddy's", domain: "drreddys.com" },
+  { name: "Tata Steel", image: "/generated_images/c1.jpeg" },
+  { name: "BHEL", image: "/generated_images/c3.jpeg" },
+  { name: "NTPC", image: "/generated_images/c4.jpeg" },
+  { name: "SAIL", image: "/generated_images/c5.jpeg" },
+  { name: "Reliance Industries", image: "/generated_images/c6.jpeg" },
+  { name: "Adani Group", image: "/generated_images/c7.jpeg" },
+  { name: "Maruti Suzuki", image: "/generated_images/c8.jpeg" },
+  { name: "Hero MotoCorp", image: "/generated_images/c9.jpeg" },
+  { name: "Mahindra", image: "/generated_images/c10.jpg" },
+  { name: "L&T", image: "/generated_images/c11.jpeg" },
+  { name: "UltraTech Cement", image: "/generated_images/c12.jpeg" },
+  { name: "Cipla", image: "/generated_images/c13.jpeg" },
+  { name: "Sun Pharma", image: "/generated_images/c14.jpeg" },
+  { name: "Bajaj Auto", image: "/generated_images/c15.jpeg" },
+  { name: "Infosys", image: "/generated_images/c16.jpeg" },
+  { name: "Wipro", image: "/generated_images/c17.jpg" },
+  { name: "TCS", image: "/generated_images/c18.jpeg" },
 ];
 
-function ClientLogo({ name, domain }: { name: string; domain: string }) {
+function ClientLogo({ name, image }: { name: string; image: string }) {
   const [imgFailed, setImgFailed] = useState(false);
 
   return (
@@ -34,7 +31,7 @@ function ClientLogo({ name, domain }: { name: string; domain: string }) {
     >
       {!imgFailed ? (
         <img
-          src={`https://logo.clearbit.com/${domain}`}
+          src={image}
           alt={`${name} logo`}
           className="max-w-full max-h-9 object-contain"
           onError={() => setImgFailed(true)}
@@ -55,7 +52,7 @@ export default function Clients() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Badge variant="outline" className="mb-4">
-            Our Partners
+            Our Clients
           </Badge>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">
             Trusted by Industry Leaders
@@ -76,7 +73,7 @@ export default function Clients() {
             <ClientLogo
               key={`row1-${client.name}-${index}`}
               name={client.name}
-              domain={client.domain}
+              image={client.image}
             />
           ))}
         </div>
@@ -86,7 +83,7 @@ export default function Clients() {
             <ClientLogo
               key={`row2-${client.name}-${index}`}
               name={client.name}
-              domain={client.domain}
+              image={client.image}
             />
           ))}
         </div>

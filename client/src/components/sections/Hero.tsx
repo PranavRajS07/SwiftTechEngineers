@@ -33,7 +33,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 lg:pt-28"
       data-testid="section-hero"
     >
       <div

@@ -16,16 +16,16 @@ import {
 } from "lucide-react";
 
 const industries = [
-  { id: "automobile", title: "Automobile", icon: Car, projects: 150 },
-  { id: "power", title: "Power Sector", icon: Zap, projects: 200 },
-  { id: "electronics", title: "Electronics", icon: Cpu, projects: 120 },
-  { id: "pharmaceutical", title: "Pharmaceutical", icon: Pill, projects: 180 },
-  { id: "petroleum", title: "Petroleum", icon: Fuel, projects: 90 },
-  { id: "food", title: "Food & Beverages", icon: UtensilsCrossed, projects: 250 },
-  { id: "brewery", title: "Brewery & Distillery", icon: Wine, projects: 80 },
-  { id: "sugar", title: "Sugar", icon: Candy, projects: 110 },
-  { id: "manufacturing", title: "Manufacturing", icon: Factory, projects: 300 },
-  { id: "textiles", title: "Textiles", icon: Shirt, projects: 140 },
+  { id: "automobile", title: "Automobile", icon: Car, projects: 15 },
+  { id: "power", title: "Power Sector", icon: Zap, projects: 22 },
+  { id: "electronics", title: "Electronics", icon: Cpu, projects: 12 },
+  { id: "pharmaceutical", title: "Pharmaceutical", icon: Pill, projects: 18 },
+  { id: "petroleum", title: "Petroleum", icon: Fuel, projects: 9 },
+  { id: "food", title: "Food & Beverages", icon: UtensilsCrossed, projects: 28 },
+  { id: "brewery", title: "Brewery & Distillery", icon: Wine, projects: 8 },
+  { id: "sugar", title: "Sugar", icon: Candy, projects: 11 },
+  { id: "manufacturing", title: "Manufacturing", icon: Factory, projects: 35 },
+  { id: "textiles", title: "Textiles", icon: Shirt, projects: 14 },
 ];
 
 export default function Industries() {

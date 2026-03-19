@@ -69,14 +69,14 @@ export default function Header({ onSearchOpen }: HeaderProps) {
       data-testid="header"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-20 lg:h-24">
           <Link href="/" data-testid="link-home">
             <div className="flex items-center gap-3 cursor-pointer">
               <img
                 src={logoImg}
                 alt="SwiftTech Engineers Logo"
-                className="h-10 w-auto"
-                style={{ filter: isScrolled ? "none" : "drop-shadow(0 2px 4px rgba(0,0,0,0.3))" }}
+                className="h-14 lg:h-16 w-auto"
+                style={{ filter: isScrolled ? "none" : "drop-shadow(0 2px 6px rgba(0,0,0,0.4))" }}
               />
               <div className="hidden sm:block">
                 <span

@@ -22,9 +22,9 @@ const divisions = [
 
 const contactInfo = [
   { icon: Mail, label: "Email", value: "sales@swifttech.in" },
-  { icon: Phone, label: "Phone", value: "044 - 4861 9190" },
+  { icon: Phone, label: "Phone", value: "044 - 2486 3790, +91 9940150790" },
   { icon: MapPin, label: "Location", value: "Valasaravakkam, Chennai - 600 087" },
-  { icon: Clock, label: "Office Hours", value: "Mon – Sat, 9:00 AM – 6:00 PM" },
+  { icon: Clock, label: "Office Hours", value: "Mon – Sat, 9:30 AM – 6:30 PM" },
 ];
 
 export default function ContactForm() {
@@ -144,10 +144,10 @@ export default function ContactForm() {
             <div>
               <h3 className="font-semibold text-lg mb-4">Department Emails</h3>
               <div className="space-y-2 text-sm">
-                <p><span className="text-muted-foreground">Projects:</span> <span className="font-medium">projects@swifttech.in</span></p>
                 <p><span className="text-muted-foreground">Sales:</span> <span className="font-medium">sales@swifttech.in</span></p>
-                <p><span className="text-muted-foreground">Purchase:</span> <span className="font-medium">purchase@swifttech.in</span></p>
                 <p><span className="text-muted-foreground">Admin:</span> <span className="font-medium">admin@swifttech.in</span></p>
+                <p><span className="text-muted-foreground">Purchase:</span> <span className="font-medium">purchase@swifttech.in</span></p>
+                <p><span className="text-muted-foreground">Projects:</span> <span className="font-medium">projects@swifttech.in</span></p>
               </div>
             </div>
           </div>

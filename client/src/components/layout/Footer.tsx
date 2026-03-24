@@ -50,10 +50,18 @@ export default function Footer() {
               Pioneer in industrial water and wastewater treatment solutions since 2006. 
               Serving India and abroad with state-of-the-art treatment technologies.
             </p>
+
+            {/* ✅ FIXED LINKEDIN BUTTON */}
             <div className="flex gap-2">
-              <Button variant="outline" size="icon" data-testid="button-linkedin">
-                <Linkedin className="h-4 w-4" />
-              </Button>
+              <a 
+                href="https://www.linkedin.com/company/swifttech-engineers-india-private-limited/posts/?feedView=all"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button variant="outline" size="icon" data-testid="button-linkedin">
+                  <Linkedin className="h-4 w-4" />
+                </Button>
+              </a>
             </div>
           </div>
 
@@ -106,7 +114,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 flex-shrink-0" />
-                <span>044 – 4861 9190</span>
+                <span>044 – 2486 3790, +91 9940150790</span>
               </div>
             </div>
             <div className="pt-2">

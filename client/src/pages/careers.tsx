@@ -213,24 +213,16 @@ export default function Careers() {
     setIsSubmitting(true);
 
     const form = e.currentTarget;
-    const data = {
-      name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
-      position: selectedPosition || (form.elements.namedItem("position") as HTMLSelectElement)?.value,
-      experience: (form.elements.namedItem("experience") as HTMLSelectElement)?.value,
-      workType: (form.elements.namedItem("workType") as HTMLSelectElement)?.value,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
-    };
-
+    const formData = new FormData(form);
+    
     try {
-      const res = await fetch("/api/careers", {
+      const response = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
       });
 
-      if (res.ok) {
+      if (response.ok) {
         setIsSubmitted(true);
         toast({ title: "Application submitted!", description: "We'll review your application and get back to you." });
       } else {
@@ -402,7 +394,15 @@ export default function Careers() {
                 </div>
 
                 <Card className="p-6 md:p-8">
-                  <form onSubmit={handleSubmit} className="space-y-5">
+                  <form 
+                    name="careers" 
+                    method="POST" 
+                    data-netlify="true"
+                    onSubmit={handleSubmit} 
+                    className="space-y-5"
+                  >
+                    <input type="hidden" name="form-name" value="careers" />
+                    <input type="hidden" name="position" value={selectedPosition} />
                     <div className="grid sm:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <label className="text-sm font-medium">Full Name *</label>

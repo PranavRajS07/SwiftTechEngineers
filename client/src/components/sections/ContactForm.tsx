@@ -33,39 +33,36 @@ export default function ContactForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [selectedDivision, setSelectedDivision] = useState("");
 
+  // ✅ UPDATED: Using Netlify Forms with proper submission
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     const form = e.currentTarget;
-    const data = {
-      name: (form.elements.namedItem("name") as HTMLInputElement).value,
-      email: (form.elements.namedItem("email") as HTMLInputElement).value,
-      phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
-      company: (form.elements.namedItem("company") as HTMLInputElement).value,
-      division: selectedDivision,
-      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
-    };
-
+    const formData = new FormData(form);
+    
     try {
-      const res = await fetch("/api/contact", {
+      const response = await fetch("/", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
       });
 
-      if (res.ok) {
+      if (response.ok) {
         setIsSubmitting(false);
         setIsSubmitted(true);
-        toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
+        toast({
+          title: "Message sent!",
+          description: "We'll get back to you within 24 hours.",
+        });
       } else {
-        throw new Error("Server error");
+        throw new Error("Submission failed");
       }
-    } catch {
+    } catch (error) {
       setIsSubmitting(false);
       toast({
         title: "Something went wrong",
-        description: "Please try again or email us directly at sales@swifttech.in.",
+        description: "Please try again or email sales@swifttech.in directly.",
         variant: "destructive",
       });
     }
@@ -153,46 +150,36 @@ export default function ContactForm() {
           </div>
 
           <Card className="lg:col-span-3 p-6 md:p-8">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            {/* ✅ UPDATED FORM */}
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              onSubmit={handleSubmit}
+              className="space-y-6"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <input type="hidden" name="division" value={selectedDivision} />
+
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Full Name</label>
-                  <Input
-                    name="name"
-                    placeholder="John Doe"
-                    required
-                    data-testid="input-name"
-                  />
+                  <Input name="name" placeholder="John Doe" required data-testid="input-name" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Email Address</label>
-                  <Input
-                    name="email"
-                    type="email"
-                    placeholder="john@company.com"
-                    required
-                    data-testid="input-email"
-                  />
+                  <Input name="email" type="email" placeholder="john@company.com" required data-testid="input-email" />
                 </div>
               </div>
 
               <div className="grid sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Company</label>
-                  <Input
-                    name="company"
-                    placeholder="Your Company"
-                    data-testid="input-company"
-                  />
+                  <Input name="company" placeholder="Your Company" data-testid="input-company" />
                 </div>
                 <div className="space-y-2">
                   <label className="text-sm font-medium">Phone</label>
-                  <Input
-                    name="phone"
-                    type="tel"
-                    placeholder="+91 98765 43210"
-                    data-testid="input-phone"
-                  />
+                  <Input name="phone" type="tel" placeholder="+91 98765 43210" data-testid="input-phone" />
                 </div>
               </div>
 
@@ -214,22 +201,10 @@ export default function ContactForm() {
 
               <div className="space-y-2">
                 <label className="text-sm font-medium">Message</label>
-                <Textarea
-                  name="message"
-                  placeholder="Tell us about your project requirements..."
-                  rows={5}
-                  required
-                  data-testid="input-message"
-                />
+                <Textarea name="message" placeholder="Tell us about your project requirements..." rows={5} required data-testid="input-message" />
               </div>
 
-              <Button 
-                type="submit" 
-                size="lg" 
-                className="w-full"
-                disabled={isSubmitting}
-                data-testid="button-submit"
-              >
+              <Button type="submit" size="lg" className="w-full" disabled={isSubmitting} data-testid="button-submit">
                 {isSubmitting ? (
                   "Sending..."
                 ) : (

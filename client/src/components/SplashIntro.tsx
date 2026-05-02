@@ -60,6 +60,9 @@ export default function SplashIntro({ onComplete }: SplashIntroProps) {
             position: "relative",
             width: "220px",
             height: "240px",
+            overflow: "hidden",
+            borderRadius: "50%",
+            background: "transparent",
           }}
         >
           {/* Gray skeleton logo underneath */}
@@ -73,6 +76,7 @@ export default function SplashIntro({ onComplete }: SplashIntroProps) {
               height: "100%",
               objectFit: "contain",
               filter: "grayscale(100%) opacity(18%)",
+              background: "transparent",
             }}
           />
 
@@ -82,6 +86,7 @@ export default function SplashIntro({ onComplete }: SplashIntroProps) {
               position: "absolute",
               inset: 0,
               overflow: "hidden",
+              background: "transparent",
             }}
           >
             <img
@@ -93,6 +98,7 @@ export default function SplashIntro({ onComplete }: SplashIntroProps) {
                 height: "100%",
                 objectFit: "contain",
                 animation: "water-fill-logo 2s cubic-bezier(0.4, 0, 0.2, 1) forwards",
+                background: "transparent",
               }}
             />
           </div>

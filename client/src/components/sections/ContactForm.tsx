@@ -155,7 +155,7 @@ export default function ContactForm() {
             <form
               name="contact"
               method="POST"
-              action="/"
+              action=""
               data-netlify="true"
               onSubmit={handleSubmit}
               className="space-y-6"

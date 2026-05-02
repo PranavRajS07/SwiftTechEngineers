@@ -398,7 +398,7 @@ export default function Careers() {
                   <form 
                     name="careers" 
                     method="POST"
-                    action="/"
+                    action=""
                     data-netlify="true"
                     onSubmit={handleSubmit} 
                     className="space-y-5"

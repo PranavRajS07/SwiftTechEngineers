@@ -39,13 +39,12 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     const form = e.currentTarget;
-    const action = form.action || window.location.pathname;
+    const action = form.action || "/";
     const formData = new FormData(form);
 
     try {
       const response = await fetch(action, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString(),
       });
 
@@ -93,7 +92,7 @@ export default function ContactForm() {
   }
 
   return (
-    <section className="py-24 bg-background" data-testid="section-contact">
+    <section id="contact-form" className="py-24 bg-background" data-testid="section-contact">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Badge variant="outline" className="mb-4">Get in Touch</Badge>
@@ -156,7 +155,7 @@ export default function ContactForm() {
             <form
               name="contact"
               method="POST"
-              action=""
+              action="/"
               data-netlify="true"
               onSubmit={handleSubmit}
               className="space-y-6"

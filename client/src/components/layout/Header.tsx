@@ -193,8 +193,13 @@ export default function Header({ onSearchOpen }: HeaderProps) {
               <Search className="h-5 w-5" />
             </Button>
             <ThemeToggle />
-            <Link href="/contact">
-              <Button data-testid="button-contact" className="hidden sm:flex" size="sm">
+            <Link href="/contact#contact-form">
+              <Button
+                data-testid="button-contact"
+                className="hidden sm:flex"
+                size="sm"
+                onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })}
+              >
                 Contact Us
               </Button>
             </Link>

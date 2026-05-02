@@ -118,8 +118,14 @@ export default function Footer() {
               </div>
             </div>
             <div className="pt-2">
-              <Link href="/contact">
-                <Button variant="outline" size="sm" className="w-full" data-testid="button-footer-contact">
+              <Link href="/contact#contact-form">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full"
+                  data-testid="button-footer-contact"
+                  onClick={() => document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })}
+                >
                   Get in Touch
                 </Button>
               </Link>

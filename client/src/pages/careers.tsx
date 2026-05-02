@@ -213,22 +213,24 @@ export default function Careers() {
     setIsSubmitting(true);
 
     const form = e.currentTarget;
+    const action = form.action || window.location.pathname;
     const formData = new FormData(form);
-    
+
     try {
-      const response = await fetch("/", {
+      const response = await fetch(action, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString(),
       });
 
-      if (response.ok) {
-        setIsSubmitted(true);
-        toast({ title: "Application submitted!", description: "We'll review your application and get back to you." });
-      } else {
-        throw new Error("Submission failed");
+      if (!response.ok) {
+        throw new Error(`Application submission failed (${response.status})`);
       }
-    } catch {
+
+      setIsSubmitted(true);
+      toast({ title: "Application submitted!", description: "We'll review your application and get back to you." });
+    } catch (error) {
+      console.error("Careers form submit error", error);
       toast({ title: "Something went wrong", description: "Please try again or email admin@swifttech.in directly.", variant: "destructive" });
     } finally {
       setIsSubmitting(false);
@@ -396,7 +398,8 @@ export default function Careers() {
                 <Card className="p-6 md:p-8">
                   <form 
                     name="careers" 
-                    method="POST" 
+                    method="POST"
+                    action=""
                     data-netlify="true"
                     onSubmit={handleSubmit} 
                     className="space-y-5"

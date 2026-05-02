@@ -39,32 +39,34 @@ export default function ContactForm() {
     setIsSubmitting(true);
 
     const form = e.currentTarget;
+    const action = form.action || window.location.pathname;
     const formData = new FormData(form);
-    
+
     try {
-      const response = await fetch("/", {
+      const response = await fetch(action, {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString(),
       });
 
-      if (response.ok) {
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-        toast({
-          title: "Message sent!",
-          description: "We'll get back to you within 24 hours.",
-        });
-      } else {
-        throw new Error("Submission failed");
+      if (!response.ok) {
+        throw new Error(`Form submission failed (${response.status})`);
       }
+
+      setIsSubmitted(true);
+      toast({
+        title: "Message sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
     } catch (error) {
-      setIsSubmitting(false);
+      console.error("Contact form submit error", error);
       toast({
         title: "Something went wrong",
         description: "Please try again or email sales@swifttech.in directly.",
         variant: "destructive",
       });
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -154,6 +156,7 @@ export default function ContactForm() {
             <form
               name="contact"
               method="POST"
+              action=""
               data-netlify="true"
               onSubmit={handleSubmit}
               className="space-y-6"
@@ -185,7 +188,7 @@ export default function ContactForm() {
 
               <div className="space-y-2">
                 <label className="text-sm font-medium">Division</label>
-                <Select onValueChange={(v) => setSelectedDivision(v)}>
+                <Select name="division" onValueChange={(v) => setSelectedDivision(v)}>
                   <SelectTrigger data-testid="select-division">
                     <SelectValue placeholder="Select a division" />
                   </SelectTrigger>

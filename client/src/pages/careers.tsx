@@ -213,13 +213,12 @@ export default function Careers() {
     setIsSubmitting(true);
 
     const form = e.currentTarget;
-    const action = form.action || window.location.pathname;
+    const action = form.action || "/";
     const formData = new FormData(form);
 
     try {
       const response = await fetch(action, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(formData as any).toString(),
       });
 
@@ -399,7 +398,7 @@ export default function Careers() {
                   <form 
                     name="careers" 
                     method="POST"
-                    action=""
+                    action="/"
                     data-netlify="true"
                     onSubmit={handleSubmit} 
                     className="space-y-5"
